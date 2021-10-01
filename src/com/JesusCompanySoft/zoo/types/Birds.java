@@ -7,8 +7,8 @@ public class Birds extends Animals {
     String colorPlumaje;
     String tipoGarra;
 
-    public Birds(String nombre, int edad, String genero, double altitudMaximaVuelo, String colorPlumaje, String tipoGarra) {
-        super(nombre, edad, genero);
+    public Birds(String nombre, int edad, String genero, int espacio, double altitudMaximaVuelo, String colorPlumaje, String tipoGarra) {
+        super(nombre, edad, genero, espacio);
         this.altitudMaximaVuelo = altitudMaximaVuelo;
         this.colorPlumaje = colorPlumaje;
         this.tipoGarra = tipoGarra;

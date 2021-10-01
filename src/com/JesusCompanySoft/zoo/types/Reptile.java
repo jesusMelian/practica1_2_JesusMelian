@@ -7,8 +7,8 @@ public class Reptile extends Animals {
     String colorEscama;
     double velocidadDesplazamiento;
 
-    public Reptile(String nombre, int edad, String genero, double temperaturaCorporal, String colorEscama, double velocidadDesplazamiento) {
-        super(nombre, edad, genero);
+    public Reptile(String nombre, int edad, String genero, int espacio, double temperaturaCorporal, String colorEscama, double velocidadDesplazamiento) {
+        super(nombre, edad, genero, espacio);
         this.temperaturaCorporal = temperaturaCorporal;
         this.colorEscama = colorEscama;
         this.velocidadDesplazamiento = velocidadDesplazamiento;

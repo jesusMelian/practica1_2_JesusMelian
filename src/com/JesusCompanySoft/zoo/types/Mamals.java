@@ -8,12 +8,16 @@ public class Mamals extends Animals {
     double velocidadDesplazamiento;
     String dieta;                           //carnívora, herbívora, omnívora
 
-    public Mamals(String nombre, int edad, String genero, double peso, String habitos, double velocidadDesplazamiento, String dieta) {
-        super(nombre, edad, genero);
+    public Mamals(String nombre, int edad, String genero, int espacio, double peso, String habitos, double velocidadDesplazamiento, String dieta) {
+        super(nombre, edad, genero, espacio);
         this.peso = peso;
         this.habitos = habitos;
         this.velocidadDesplazamiento = velocidadDesplazamiento;
         this.dieta = dieta;
+    }
+
+    public Mamals() {
+
     }
 
     public double getPeso() {
@@ -56,5 +60,30 @@ public class Mamals extends Animals {
                 ", velocidadDesplazamiento=" + velocidadDesplazamiento +
                 ", dieta='" + dieta + '\'' +
                 '}';
+    }
+
+    public String generarHabitoAleatorio(){
+        Animals a=new Animals();
+        int numRandom = (int) a.generarNumeroAleatorio(1, 2);
+        if(numRandom==1){
+            return "DIURNO";
+        }else{
+            return "NOCTURNO";
+        }
+    }
+
+    public String generarDietaAleatorio(){
+        Animals a=new Animals();
+        int numRandom = (int) a.generarNumeroAleatorio(1, 3);
+        switch (numRandom){
+            case 1:
+                return "HERBÍBORO";
+            case 2:
+                return "OMNÍVORO";
+            case 3:
+                return "CARNÍVORO";
+            default:
+                return "FALLO";
+        }
     }
 }
