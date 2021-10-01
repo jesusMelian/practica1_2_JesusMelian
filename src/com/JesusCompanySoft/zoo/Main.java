@@ -10,16 +10,18 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        int espacios = Integer.parseInt(JOptionPane.showInputDialog("INSERTE EL NÚMERO DE ESPACIOS"));
-        int animales = Integer.parseInt(JOptionPane.showInputDialog("INSERTE EL NÚMERO DE ANIMALES"));
+        //int espacios = Integer.parseInt(JOptionPane.showInputDialog("INSERTE EL NÚMERO DE ESPACIOS"));
+        //int animales = Integer.parseInt(JOptionPane.showInputDialog("INSERTE EL NÚMERO DE ANIMALES"));
 
-        if(comprobarSiCaben(espacios, animales)){
+        Animals a=new Animals();
+        System.out.println((int) a.generarNumeroAleatorio(1,3));
+        /*if(comprobarSiCaben(espacios, animales)){
             //si los animales caben hay que generar animales aleatoriamente
 
         }else{
             System.out.println("LOS ANIMALES NO CABEN BIEN");
 
-        }
+        }*/
     }
 
     public static boolean comprobarSiCaben(int numEspacios, int numAnimales){
@@ -85,6 +87,8 @@ public class Main {
                                         bird.generarColorPlumaje(),
                                         bird.generarTipoGarra()
                                 );
+                            case 3:
+
                         }
                     }
                 }else{

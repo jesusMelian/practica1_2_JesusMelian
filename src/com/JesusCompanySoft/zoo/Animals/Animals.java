@@ -72,7 +72,11 @@ public class Animals {
     }
 
     public double generarNumeroAleatorio(double numMin, double numMax){
-        double randomNum = Math.random() * ((numMax+1) - numMin);
+        //double randomNum = Math.random() * numMax + 1;
+        double random=Math.random();
+        double rango=(numMax+1) - numMin;
+        double randomNum = (random * rango)+numMin;
+
         return  randomNum;
     }
 
