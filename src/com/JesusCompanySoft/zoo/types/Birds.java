@@ -7,11 +7,17 @@ public class Birds extends Animals {
     String colorPlumaje;
     String tipoGarra;
 
+    String[] arrColors = {"azul", "verde", "rojo", "amarillo", "naranja"};
+    String[] arrGarras = {"palmipeda", "garra"};
     public Birds(String nombre, int edad, String genero, int espacio, double altitudMaximaVuelo, String colorPlumaje, String tipoGarra) {
         super(nombre, edad, genero, espacio);
         this.altitudMaximaVuelo = altitudMaximaVuelo;
         this.colorPlumaje = colorPlumaje;
         this.tipoGarra = tipoGarra;
+    }
+
+    public Birds() {
+
     }
 
     public double getAltitudMaximaVuelo() {
@@ -46,4 +52,17 @@ public class Birds extends Animals {
                 ", tipoGarra='" + tipoGarra + '\'' +
                 '}';
     }
+
+    public String generarColorPlumaje(){
+        Animals a= new Animals();
+        int numRandom = (int) a.generarNumeroAleatorio(0,5);
+        return arrColors[numRandom];
+    }
+
+    public String generarTipoGarra(){
+        Animals a= new Animals();
+        int numRandom = (int) a.generarNumeroAleatorio(0,2);
+        return arrGarras[numRandom];
+    }
+
 }
