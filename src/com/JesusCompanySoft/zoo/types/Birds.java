@@ -55,13 +55,13 @@ public class Birds extends Animals {
 
     public String generarColorPlumaje(){
         Animals a= new Animals();
-        int numRandom = (int) a.generarNumeroAleatorio(0,5);
+        int numRandom = (int) a.generarNumeroAleatorio(0,4);
         return arrColors[numRandom];
     }
 
     public String generarTipoGarra(){
         Animals a= new Animals();
-        int numRandom = (int) a.generarNumeroAleatorio(0,2);
+        int numRandom = (int) a.generarNumeroAleatorio(0,1);
         return arrGarras[numRandom];
     }
 

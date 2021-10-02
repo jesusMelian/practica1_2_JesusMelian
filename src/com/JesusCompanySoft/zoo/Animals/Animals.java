@@ -4,6 +4,15 @@ public class Animals {
     String nombre;
     int edad;
     String genero;
+
+    public int getEspacio() {
+        return espacio;
+    }
+
+    public void setEspacio(int espacio) {
+        this.espacio = espacio;
+    }
+
     int espacio;
 
     String[] arrName={"Tifón",
@@ -67,7 +76,7 @@ public class Animals {
 
     public String generarNombreAleatorio(){
         Animals a=new Animals();
-        int numRandom = (int) a.generarNumeroAleatorio(0, arrName.length);
+        int numRandom = (int) a.generarNumeroAleatorio(0, arrName.length-1);
         return arrName[numRandom];
     }
 
