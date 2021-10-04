@@ -52,16 +52,6 @@ public class Mamals extends Animals {
         this.dieta = dieta;
     }
 
-    @Override
-    public String toString() {
-        return "Mamals{" +
-                "peso=" + peso +
-                ", habitos='" + habitos + '\'' +
-                ", velocidadDesplazamiento=" + velocidadDesplazamiento +
-                ", dieta='" + dieta + '\'' +
-                '}';
-    }
-
     public String generarHabitoAleatorio(){
         Animals a=new Animals();
         int numRandom = (int) a.generarNumeroAleatorio(1, 2);
@@ -85,5 +75,29 @@ public class Mamals extends Animals {
             default:
                 return "FALLO";
         }
+    }
+
+    public Mamals generarMamalsAleatorio(int i){
+        Animals a = new Animals();
+        Mamals mamal = new Mamals(a.generarNombreAleatorio().toString(),
+                (int) a.generarNumeroAleatorio(1, 100),
+                a.generarGeneroAleatorio(),
+                i+1,
+                a.generarNumeroAleatorio(1, 1200),
+                this.generarHabitoAleatorio(),
+                a.generarNumeroAleatorio(1, 120),
+                this.generarDietaAleatorio()
+        );
+        return mamal;
+    }
+    @Override
+    public String toString() {
+        return
+                " PESO= " + peso +
+                ", HABITOS = '" + habitos + '\'' +
+                ", velocidadDesplazamiento= " + velocidadDesplazamiento +
+                ", dieta= '" + dieta + '\'' +
+                "ES UN MAMAL" +
+                '}';
     }
 }

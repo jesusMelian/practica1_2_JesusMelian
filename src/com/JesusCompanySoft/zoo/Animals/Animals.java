@@ -1,5 +1,7 @@
 package com.JesusCompanySoft.zoo.Animals;
 
+import com.JesusCompanySoft.zoo.types.Reptile;
+
 public class Animals {
     String nombre;
     int edad;
@@ -65,15 +67,6 @@ public class Animals {
         this.genero = genero;
     }
 
-    @Override
-    public String toString() {
-        return "Animals{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", genero='" + genero + '\'' +
-                '}';
-    }
-
     public String generarNombreAleatorio(){
         Animals a=new Animals();
         int numRandom = (int) a.generarNumeroAleatorio(0, arrName.length-1);
@@ -98,5 +91,7 @@ public class Animals {
             return "HEMBRA";
         }
     }
+
+
 
 }

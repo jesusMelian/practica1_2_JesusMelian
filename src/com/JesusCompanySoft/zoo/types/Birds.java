@@ -2,6 +2,8 @@ package com.JesusCompanySoft.zoo.types;
 
 import com.JesusCompanySoft.zoo.Animals.Animals;
 
+import java.util.Arrays;
+
 public class Birds extends Animals {
     double altitudMaximaVuelo;
     String colorPlumaje;
@@ -44,15 +46,6 @@ public class Birds extends Animals {
         this.tipoGarra = tipoGarra;
     }
 
-    @Override
-    public String toString() {
-        return "Birds{" +
-                "altitudMaximaVuelo=" + altitudMaximaVuelo +
-                ", colorPlumaje='" + colorPlumaje + '\'' +
-                ", tipoGarra='" + tipoGarra + '\'' +
-                '}';
-    }
-
     public String generarColorPlumaje(){
         Animals a= new Animals();
         int numRandom = (int) a.generarNumeroAleatorio(0,4);
@@ -65,4 +58,25 @@ public class Birds extends Animals {
         return arrGarras[numRandom];
     }
 
+    public Birds generarBirdAleatorio( int i){
+        Animals a=new Animals();
+        Birds birds = new Birds(a.generarNombreAleatorio(),
+                (int) a.generarNumeroAleatorio(1,20),
+                a.generarGeneroAleatorio(),
+                i+1,
+                a.generarNumeroAleatorio(10, 3000),
+                this.generarColorPlumaje(),
+                this.generarTipoGarra()
+        );
+        return birds;
+    }
+    @Override
+    public String toString() {
+        return
+                " altitudMaximaVuelo= " + altitudMaximaVuelo +
+                ", colorPlumaje ='" + colorPlumaje + '\'' +
+                ", tipoGarra ='" + tipoGarra + '\'' +
+                "ES UN BIRD" +
+                '}';
+    }
 }
