@@ -32,6 +32,8 @@ public class Animals {
             "Petisuí",
             "Brego"
     };
+
+    //ALMACENO EL ESPACIO AL QUE PERTENECE CADA ANIMAL
     public Animals(String nombre, int edad, String genero, int espacio) {
         this.nombre = nombre;
         this.edad = edad;
