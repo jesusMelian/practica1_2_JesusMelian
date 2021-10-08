@@ -60,15 +60,33 @@ public class Birds extends Animals {
 
     public Birds generarBirdAleatorio( int i){
         Animals a=new Animals();
-        Birds birds = new Birds(a.generarNombreAleatorio(),
-                (int) a.generarNumeroAleatorio(1,20),
-                a.generarGeneroAleatorio(),
-                i+1,
-                a.generarNumeroAleatorio(10, 3000),
-                this.generarColorPlumaje(),
-                this.generarTipoGarra()
-        );
-        return birds;
+        double numAle=a.generarNumeroAleatorio(1,2);
+        Birds bird = new Birds();
+        switch ((int) numAle){
+            case 1:
+                Gorrion gorrion = new Gorrion(a.generarNombreAleatorio(),
+                        (int) a.generarNumeroAleatorio(1, 20),
+                        a.generarGeneroAleatorio(),
+                        i + 1,
+                        a.generarNumeroAleatorio(10, 3000),
+                        bird.generarColorPlumaje(),
+                        bird.generarTipoGarra()
+                );
+                return gorrion;
+            case 2:
+                Cernicalo cerni= new Cernicalo(a.generarNombreAleatorio(),
+                        (int) a.generarNumeroAleatorio(1, 20),
+                        a.generarGeneroAleatorio(),
+                        i + 1,
+                        a.generarNumeroAleatorio(10, 3000),
+                        bird.generarColorPlumaje(),
+                        bird.generarTipoGarra()
+                );
+                return cerni;
+            default:
+                return bird;
+        }
+
     }
     @Override
     public String toString() {
