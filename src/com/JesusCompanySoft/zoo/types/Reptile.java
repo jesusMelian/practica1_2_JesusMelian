@@ -55,16 +55,29 @@ public class Reptile extends Animals {
     public Reptile generarReptileAleatorio(int i){
         Animals a= new Animals();
         Reptile reptile=new Reptile();
-        Reptile reptil1 = new Reptile(a.generarNombreAleatorio(),
-                (int) a.generarNumeroAleatorio(1,50),
-                a.generarGeneroAleatorio(),
-                i+1,
-                a.generarNumeroAleatorio(2,20),
-                reptile.generarColorEscamas(),
-                a.generarNumeroAleatorio(1, 70)
-        );
-
-        return reptil1;
+        double numAle=a.generarNumeroAleatorio(1,2);
+        switch ((int) numAle){
+            case 1:
+                Cobra cobra = new Cobra(a.generarNombreAleatorio(),
+                        (int) a.generarNumeroAleatorio(1, 50),
+                        a.generarGeneroAleatorio(),
+                        i + 1,
+                        a.generarNumeroAleatorio(2, 20),
+                        reptile.generarColorEscamas(),
+                        a.generarNumeroAleatorio(1, 70));
+                return cobra;
+            case 2:
+                Boa boa = new Boa(a.generarNombreAleatorio(),
+                        (int) a.generarNumeroAleatorio(1, 50),
+                        a.generarGeneroAleatorio(),
+                        i + 1,
+                        a.generarNumeroAleatorio(2, 20),
+                        reptile.generarColorEscamas(),
+                        a.generarNumeroAleatorio(1, 70));
+                return boa;
+            default:
+                return reptile;
+        }
     }
 
     @Override

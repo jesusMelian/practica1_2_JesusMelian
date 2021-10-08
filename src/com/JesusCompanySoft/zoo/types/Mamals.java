@@ -79,16 +79,37 @@ public class Mamals extends Animals {
 
     public Mamals generarMamalsAleatorio(int i){
         Animals a = new Animals();
-        Mamals mamal = new Mamals(a.generarNombreAleatorio().toString(),
-                (int) a.generarNumeroAleatorio(1, 100),
-                a.generarGeneroAleatorio(),
-                i+1,
-                a.generarNumeroAleatorio(1, 1200),
-                this.generarHabitoAleatorio(),
-                a.generarNumeroAleatorio(1, 120),
-                this.generarDietaAleatorio()
-        );
-        return mamal;
+        Mamals mama = new Mamals();
+        double numAle=a.generarNumeroAleatorio(1,2);
+        switch ((int) numAle){
+            case 1:
+                Rata rata = new Rata(a.generarNombreAleatorio().toString(),
+                        (int) a.generarNumeroAleatorio(1, 100),
+                        a.generarGeneroAleatorio(),
+                        i + 1,
+                        a.generarNumeroAleatorio(1, 1200),
+                        mama.generarHabitoAleatorio(),
+                        a.generarNumeroAleatorio(1, 120),
+                        mama.generarDietaAleatorio()
+
+                );
+                return rata;
+            case 2:
+                Vaca vaca= new Vaca(a.generarNombreAleatorio().toString(),
+                        (int) a.generarNumeroAleatorio(1, 100),
+                        a.generarGeneroAleatorio(),
+                        i + 1,
+                        a.generarNumeroAleatorio(1, 1200),
+                        mama.generarHabitoAleatorio(),
+                        a.generarNumeroAleatorio(1, 120),
+                        mama.generarDietaAleatorio()
+
+                );
+                return vaca;
+            default:
+                return mama;
+        }
+
     }
     @Override
     public String toString() {
